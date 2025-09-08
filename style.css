@@ -118,6 +118,43 @@ h2 {
   background: #81C784;
 }
 
+/* Skills Section */
+.skills-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 15px;
+}
+
+.skill-level {
+  height: 15px;
+  background: #4CAF50;
+  width: 0;
+  transition: width 1s;
+}
+
+/* Animate skill bars on page load */
+window.addEventListener('load', () => {
+  const skillLevels = document.querySelectorAll('.skill-level');
+  skillLevels.forEach(level => {
+    level.style.width = level.style.width; // Trigger transition
+  });
+});
+
 /* Footer */
 footer {
   text-align: center;
