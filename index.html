@@ -3,38 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>My Interactive Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
   <header>
     <h1>Hi, I'm Deepak</h1>
     <p>B.Tech CSE Student | Future Developer 🚀</p>
+    <a href="#contact" class="btn">Hire Me</a>
   </header>
 
-  <section>
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm currently pursuing B.Tech in Computer Science.  
-      I enjoy learning coding, building projects, and exploring freelancing opportunities.
+      I'm a B.Tech CSE student passionate about coding, building projects, and freelancing.
     </p>
   </section>
 
-  <section>
+  <!-- Hobbies Section -->
+  <section id="hobbies">
     <h2>My Hobbies</h2>
-    <ul>
-      <li>Coding & Problem Solving 💻</li>
-      <li>Bike Riding 🏍️</li>
-      <li>Gaming 🎮</li>
-      <li>Reading Tech Blogs 📚</li>
-    </ul>
+    <div class="cards">
+      <div class="card">💻 Coding & Problem Solving</div>
+      <div class="card">🏍️ Bike Riding</div>
+      <div class="card">🎮 Gaming</div>
+      <div class="card">📚 Reading Tech Blogs</div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: vs5339209@gmail.com</p>
+    <p>
+      <a href="https://github.com/xperimentt" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/deepak-yadav-57b813293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+    </p>
   </section>
 
   <footer>
-    <p>Connect with me:  
-      <a href="https://github.com/xperimentt" target="_blank">GitHub</a> |  
-      <a href="https://www.linkedin.com/in/deepak-yadav-57b813293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
-    </p>
+    <p>&copy; 2025 Deepak. All Rights Reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
