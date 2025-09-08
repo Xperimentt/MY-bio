@@ -1,3 +1,4 @@
+/* General */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,6 +8,7 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Navigation */
 nav {
   background: #4CAF50;
   padding: 10px 0;
@@ -38,6 +40,7 @@ nav ul li a:hover {
   color: #ffeb3b;
 }
 
+/* Header */
 header {
   background: linear-gradient(to right, #4CAF50, #81C784);
   color: white;
@@ -62,6 +65,7 @@ header .btn:hover {
   color: #fff;
 }
 
+/* Sections */
 section {
   padding: 40px 20px;
   max-width: 900px;
@@ -74,6 +78,7 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -84,7 +89,7 @@ h2 {
 .card {
   background: white;
   padding: 20px;
-  width: 180px;
+  width: 250px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -96,6 +101,24 @@ h2 {
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+/* Project Buttons */
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.project-btn:hover {
+  background: #81C784;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 15px;
