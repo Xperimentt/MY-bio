@@ -1,109 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonType | Ultimate Typing Speed Test</title>
+    <meta name="description"
+        content="Test your typing speed with TT. A beautiful, modern typing speed calculator.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <div class="background-gradient"></div>
 
-  <!-- Header -->
-  <header>
-    <h1>Hi, I'm Deepak</h1>
-    <p>B.Tech CSE Student | Aspiring Developer 🚀</p>
-    <a href="#contact" class="btn">Hire Me</a>
-  </header>
+    <main class="container">
+        <header>
+            <h1 class="logo">It's all <span class="highlight">YOURS</span></h1>
+            <div class="controls-group">
+                <div class="mode-selector">
+                    <button class="mode-btn" data-mode="time" data-value="60">1m</button>
+                    <button class="mode-btn" data-mode="time" data-value="180">3m</button>
+                    <button class="mode-btn active" data-mode="time" data-value="300">5m</button>
+                </div>
+                <div class="divider"></div>
+                <div class="difficulty-selector">
+                    <button class="diff-btn active" data-difficulty="easy">Easy</button>
+                    <button class="diff-btn" data-difficulty="medium">Medium</button>
+                    <button class="diff-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+        </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a B.Tech CSE student passionate about coding, building interactive projects, and exploring freelancing opportunities.  
-      I enjoy learning web development, React, and Node.js, and I love creating projects that help people learn and solve problems.
-    </p>
-  </section>
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-label">Time</span>
+                <span class="stat-value" id="timer">300</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">WPM</span>
+                <span class="stat-value" id="wpm">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Accuracy</span>
+                <span class="stat-value" id="accuracy">100%</span>
+            </div>
+        </div>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>My Skills</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <p>HTML & CSS</p>
-        <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-      </div>
-      <div class="skill">
-        <p>JavaScript</p>
-        <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-      </div>
-      <div class="skill">
-        <p>React.js</p>
-        <div class="skill-bar"><div class="skill-level" style="width: 60%"></div></div>
-      </div>
-      <div class="skill">
-        <p>Node.js</p>
-        <div class="skill-bar"><div class="skill-level" style="width: 50%"></div></div>
-      </div>
+        <div class="start-message" id="start-message">Click on the text box or press any key to start</div>
+
+        <div class="typing-area-wrapper">
+            <div class="typing-text" id="typing-text">
+                <!-- Text will be injected here -->
+            </div>
+            <input type="text" class="input-field" id="input-field" autocomplete="off">
+        </div>
+
+        <div class="controls">
+            <button id="restart-btn" class="restart-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 12" />
+                </svg>
+                Restart Test
+            </button>
+        </div>
+    </main>
+
+    <div class="results-modal hidden" id="results-modal">
+        <div class="modal-content">
+            <h2>Test Complete!</h2>
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="fs-label">WPM</span>
+                    <span class="fs-value" id="final-wpm">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="fs-label">Accuracy</span>
+                    <span class="fs-value" id="final-accuracy">0%</span>
+                </div>
+                <div class="final-stat">
+                    <span class="fs-label">Characters</span>
+                    <span class="fs-value" id="final-chars">0/0/0/0</span>
+                    <span class="fs-sub">(correct/incorrect/extra/missed)</span>
+                </div>
+            </div>
+            <button class="primary-btn" onclick="window.location.reload()">Try Again</button>
+        </div>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Chess Game</h3>
-        <p>A fully interactive chess game built with HTML, CSS & JavaScript.</p>
-        <a href="https://xperimentt.github.io/chess/" target="_blank" class="project-btn">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Learnify</h3>
-        <p>An educational platform with interactive learning modules.</p>
-        <a href="https://xperimentt.github.io/Learnify/" target="_blank" class="project-btn">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Code Editor</h3>
-        <p>A collaborative code editor built with my benchmate using HTML, CSS & JS.</p>
-        <a href="#" target="_blank" class="project-btn">View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hobbies Section -->
-  <section id="hobbies">
-    <h2>My Hobbies</h2>
-    <div class="cards">
-      <div class="card">💻 Coding & Problem Solving</div>
-      <div class="card">🏍️ Bike Riding</div>
-      <div class="card">🎮 Gaming</div>
-      <div class="card">📚 Reading Tech Blogs</div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: vs5339209@gmail.com</p>
-    <p>
-      <a href="https://github.com/xperimentt" target="_blank">GitHub</a> |  
-      <a href="https://www.linkedin.com/in/deepak-yadav-57b813293" target="_blank">LinkedIn</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Deepak. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
